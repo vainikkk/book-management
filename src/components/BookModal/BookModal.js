@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 function BookModal({ show, handleShow, handleClose, addBook, editBook }) {
   const editData = useSelector((state) => state.editData);
   const dispatch = useDispatch();
-  const [file, setFile] = useState();
   const [bookData, setBookData] = useState({
     title: "",
     category: "",

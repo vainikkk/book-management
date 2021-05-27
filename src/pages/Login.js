@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Spinner } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import LOGIN_IMAGE from "../assets/images/login.jpg";
 import LOGO from "../logo.svg";
@@ -22,60 +22,62 @@ function Login() {
   };
   return (
     <div className="login-wrapper">
-      <div class="container">
-        <div class="card login-card">
-          <div class="row no-gutters">
-            <div class="col-md-5">
-              <img src={LOGIN_IMAGE} alt="login" class="login-card-img" />
+      <div className="container">
+        <div className="card login-card">
+          <div className="row no-gutters">
+            <div className="col-md-5">
+              <img src={LOGIN_IMAGE} alt="login" className="login-card-img" />
             </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <div class="brand-wrapper">
-                  <img src={LOGO} alt="logo" class="logo" />
+            <div className="col-md-7">
+              <div className="card-body">
+                <div className="brand-wrapper">
+                  <img src={LOGO} alt="logo" className="logo" />
                 </div>
-                <p class="login-card-description">Sign into your account</p>
+                <p className="login-card-description">Sign into your account</p>
                 <form action="#!">
-                  <div class="form-group">
-                    <label for="email" class="sr-only">
+                  <div className="form-group">
+                    <label for="email" className="sr-only">
                       Email
                     </label>
                     <input
                       type="email"
                       name="email"
                       id="email"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Email address"
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
-                  <div class="form-group mb-4">
-                    <label for="password" class="sr-only">
+                  <div className="form-group mb-4">
+                    <label for="password" className="sr-only">
                       Password
                     </label>
                     <input
                       type="password"
                       name="password"
                       id="password"
-                      class="form-control"
+                      className="form-control"
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="***********"
                     />
                   </div>
                   {loader && (
-                    <Spinner animation="border" role="status">
-                      <span className="visually-hidden">Loading...</span>
-                    </Spinner>
+                    <div className="text-center">
+                      <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                      </Spinner>
+                    </div>
                   )}
                   <input
                     name="login"
                     id="login"
-                    class="btn btn-block login-btn mb-4"
+                    className="btn btn-block login-btn mb-4"
                     type="button"
                     value="Login"
                     onClick={handleLogin}
                   />
                 </form>
-                <nav class="login-card-footer-nav">
+                <nav className="login-card-footer-nav">
                   <a href="#!">Terms of use.</a>
                   <a href="#!">Privacy policy</a>
                 </nav>

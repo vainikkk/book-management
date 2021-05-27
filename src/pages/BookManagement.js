@@ -13,7 +13,6 @@ function BookManagement() {
   const [deleteModalShow, setDeleteModalShow] = useState(false);
   const dispatch = useDispatch();
   const { data, filteredData } = useSelector((state) => state);
-  console.log(data);
   useEffect(() => {
     dispatch(getBookList());
   }, [dispatch]);
@@ -68,18 +67,15 @@ function BookManagement() {
       category: e.target.value,
     };
     let filteredData = filterArray(data, filters);
-    console.log(filteredData);
     dispatch({ type: "FILTERED_DATA", payload: filteredData });
   };
   const handleDropdown = (e) => {
-    console.log(parseInt(e) + 1);
     let modifiedData = [];
     if (e === "ALL") {
       modifiedData = data;
     } else {
       modifiedData = data.filter((v) => v.rating >= e && v.rating <= parseInt(e) + 1);
     }
-    console.log(modifiedData);
     dispatch({ type: "FILTERED_DATA", payload: modifiedData });
   };
 

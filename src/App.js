@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +10,6 @@ function App() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const verifyToken = localStorage.getItem("token");
-  console.log(state);
   if (state.isLoggedIn || verifyToken) {
     return (
       <div className="App">
